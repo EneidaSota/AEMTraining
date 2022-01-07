@@ -1,0 +1,26 @@
+New Tittle:
+<h1> ${properties.title} </h1>
+New Text:
+<p> ${properties.text} </p>
+
+<ol data-sly-list.nav="${currentPage.listChildren}">
+	<li> ${nav.count} : ${nav.title} : ${nav.path}  </li>
+</ol>
+
+${currentPage.path} 
+
+<ol data-sly-repeat.nav="${currentPage.listChildren}">
+	<li> ${nav.count} : ${nav.title} : ${nav.path}  </li>
+</ol>
+
+<sly data-sly-test="${properties.text}" >
+<p> Testo esiste </p>
+</sly>
+
+<sly data-sly-test="${!properties.title}" >
+<p> Titolo non esiste </p>
+</sly>
+
+<sly data-sly-use.model="com.moveo.aem.training.core.models.NewComponentModel" >
+	<p> ${model.titleJava}</p>
+</sly>
